@@ -44,4 +44,20 @@ export const authApi = {
   logout: () => api.post('/auth/logout'),
 };
 
+// Crypto API calls
+export const cryptoApi = {
+  getAllCryptos: (params?: { vs_currency?: string; order?: string; per_page?: number; page?: number }) =>
+    api.get('/crypto/list', { params }),
+  getCryptoDetails: (id: string) =>
+    api.get(`/crypto/details/${id}`),
+  searchCryptos: (query: string) =>
+    api.get(`/crypto/search/${query}`),
+  getMarketChart: (id: string, days?: number) =>
+    api.get(`/crypto/chart/${id}`, { params: { days } }),
+  getTrendingCryptos: () =>
+    api.get('/crypto/trending'),
+  getMarketData: () =>
+    api.get('/crypto/market/overview'),
+};
+
 export default api;

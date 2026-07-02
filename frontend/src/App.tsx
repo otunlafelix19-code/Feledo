@@ -5,6 +5,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
 import CryptoList from './pages/CryptoList'
+import CryptoDetails from './pages/CryptoDetails'
 import News from './pages/News'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -26,6 +27,7 @@ function App() {
             }
           />
           <Route path="/crypto" element={<CryptoList />} />
+          <Route path="/crypto/:id" element={<CryptoDetails />} />
           <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
